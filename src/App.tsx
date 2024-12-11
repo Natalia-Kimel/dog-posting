@@ -6,7 +6,6 @@ import CreateProduct from './components/CreateProduct';
 
 const App: React.FC = () => {
   return (
-    <Router>
       <div className="App">
         <h1>Список собачек</h1>
         <Routes>
@@ -16,7 +15,6 @@ const App: React.FC = () => {
           <Route path="/" element={<ProductList />} />
         </Routes>
       </div>
-    </Router>
   );
 };
 
