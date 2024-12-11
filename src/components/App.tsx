@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ProductList from './components/ProductList';
-import ProductPage from './components/ProductPage';
-import CreateProduct from './components/CreateProduct';
+import ProductList from './ProductList';
+import ProductPage from './ProductPage';
+import CreateProduct from './CreateProduct';
 
 const App: React.FC = () => {
   return (
