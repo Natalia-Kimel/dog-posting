@@ -26,6 +26,15 @@ const productsSlice = createSlice({
     setFilter: (state, action) => {
       state.filter = action.payload;
     },
+    updateProduct: (state, action) => {
+      const index = state.products.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.products[index] = { ...state.products[index], ...action.payload };
+      }
+    },
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -47,5 +56,5 @@ const productsSlice = createSlice({
   },
 });
 
-export const { toggleLike, removeProduct, addProduct, setFilter } = productsSlice.actions;
+export const { toggleLike, removeProduct, addProduct, setFilter, updateProduct } = productsSlice.actions;
 export default productsSlice.reducer;

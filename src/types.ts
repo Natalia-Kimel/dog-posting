@@ -20,6 +20,7 @@ export enum Filter {
     loading: boolean;
     error: string | null;
     filter: Filter,
+    searchTerm: string,
   }
   
   export const initialState: ProductsState = {
@@ -27,4 +28,5 @@ export enum Filter {
     loading: false,
     error: null,
     filter: Filter.ALL,
+    searchTerm: '',
   };

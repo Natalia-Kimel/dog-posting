@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { toggleLike, removeProduct } from '../features/productsSlice';
+import { ReactComponent as LikeActive } from '../assets/images/like-active.svg';
+import { ReactComponent as LikeInactive } from '../assets/images/like-inactive.svg';
+import { ReactComponent as DeleteButton } from '../assets/images/delete-button.svg'
 
 interface ProductCardProps {
   product: {
@@ -22,10 +25,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <img src={product.url} alt={breedName} />
         <h3>{breedName}</h3>
       </Link>
-      <button onClick={() => dispatch(toggleLike(product.id))}>
-        {product.liked ? '❤️' : '🤍'}
-      </button>
-      <button onClick={() => dispatch(removeProduct(product.id))}>Удалить</button>
+      <div className='card-button'>
+        <button onClick={() => dispatch(toggleLike(product.id))}>
+            {product.liked ? <LikeActive /> : <LikeInactive />}
+        </button>
+        <button onClick={() => dispatch(removeProduct(product.id))}> <DeleteButton /> </button>
+      </div>
     </div>
   );
 };
